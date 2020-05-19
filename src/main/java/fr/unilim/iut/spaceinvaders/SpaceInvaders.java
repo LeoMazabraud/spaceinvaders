@@ -44,11 +44,12 @@ package fr.unilim.iut.spaceinvaders;
 			return vaisseau!=null;
 		}
 
-		public void positionnerUnNouveauVaisseau(int i, int j) {
-			this.vaisseau = new Vaisseau (i,j);
+		public void positionnerUnNouveauVaisseau(int x, int y) {
 			
-		}
+			if (x >= longueur)
+				throw new HorsEspaceJeuException("Vous êtes en dehors de l'espace de jeu");
+			
+			vaisseau = new Vaisseau(x, y);
 
-		//refactoring 3 Ameliorer la quali en éliminant les nbs magiques
-		
+		}
    }
